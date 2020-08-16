@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load widget_tweaks %}
+
+<div class="row">
+    <div class="col-sm-12">
+      <form method="POST">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          {% for field in form %}
+          <div class="form-group">
+            {{ field.label_tag}}
+            {{ field | add_class:"form-control" |add_error_class:"is-invalid" | attr:"required"}}
+            {{field.help_text}}
+            {{field.errors}}
+          </div>
+          {% endfor %}
+        </div>
+          <input type="submit" value="Save" class="w-25 btn btn-primary">
+
+      </form>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

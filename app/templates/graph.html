@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="row">
+    <div class="col" id="one">
+    </div>
+    <div class="col" id="two">
+    </div>
+    <div class="col" id="three">
+    </div>
+     <div class="col" id="four">
+    </div>
+</div>
+
+<script>
+
+        var options = {
+          series: [{
+            name: "Desktops",
+            data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'straight'
+        },
+        title: {
+          text: 'Product Trends by Month',
+          align: 'left'
+        },
+        grid: {
+          row: {
+            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+            opacity: 0.5
+          },
+        },
+        xaxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#one"), options);
+        chart.render();
+
+
+        var options1 = {
+          series: [{
+            name: "Desktops",
+            data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'straight'
+        },
+        title: {
+          text: 'Product Trends by Month',
+          align: 'left'
+        },
+        grid: {
+          row: {
+            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+            opacity: 0.5
+          },
+        },
+        xaxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        }
+        };
+
+        var chart1 = new ApexCharts(document.querySelector("#two"), options1);
+        chart1.render();
+
+        var options = {
+          series: [44, 55, 13, 43, 22],
+          chart: {
+          width: 380,
+          type: 'pie',
+        },
+        labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+        };
+
+        var chart3 = new ApexCharts(document.querySelector("#three"), options);
+        chart3.render();
+
+        var options4 = {
+          series: [44, 55, 41, 17, 15],
+          chart: {
+          type: 'donut',
+        },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+        };
+
+        var chart4 = new ApexCharts(document.querySelector("#four"), options4);
+        chart4.render();
+
+
+
+
+</script>
+
+</body>
+</html>
